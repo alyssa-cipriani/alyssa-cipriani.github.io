@@ -48,8 +48,13 @@ header, footer {
 }
 
 @font-face {
-     font-family: 'Hirosin';
+    font-family: 'Hirosin';
     src: url('fonts/Demohirosinregular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
+}
+
+html{
+	font-size: 10px;
+	font-family:Swansea, serif;
 }
