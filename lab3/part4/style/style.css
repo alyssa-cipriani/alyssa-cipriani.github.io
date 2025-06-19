@@ -22,8 +22,8 @@ body {
     padding: 0 20px;
     max-width: 980px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 10px;
+	grid-template-columns: 3fr 1fr;
+	gap: 20px;
   }
   
   nav {
@@ -53,10 +53,12 @@ body {
     padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 2px;
+	gap: 1px;
   }
   .feature {
-      width: 200px;
+    width: 200px;
+	float: left;
+	margin: 20px 20px 0;
   }
   
  
