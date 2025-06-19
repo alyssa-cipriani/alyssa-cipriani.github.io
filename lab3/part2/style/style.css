@@ -20,6 +20,7 @@ div {
 	font-size: 1.1rem;
 	color: white;
 	text-shadow: 1px 1px 1px black;
+	box-shadow:2px 2px 1px white inset;
 	
 	
 	
