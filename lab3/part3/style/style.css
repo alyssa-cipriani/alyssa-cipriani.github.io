@@ -88,4 +88,10 @@ a:visited {
 a:hover {
   text-decoration: underline;
   color: orange;
-  
+}
+
+nav{
+	background-color: #white;
+	border:5px solid #a66;
+	padding: 25px;
+}
