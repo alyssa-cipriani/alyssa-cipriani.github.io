@@ -51,7 +51,9 @@ header, footer {
 
 @font-face {
     font-family: 'hirosin';
-    src: url('../fonts/Demohirosinregular.ttf') format('ttf');
+    src: url('../fonts/Demohirosinregular.woff2') format('woff2'),
+         url('../fonts/Demohirosinregular.woff') format('woff'),
+         url('../fonts/Demohirosinregular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -92,9 +94,9 @@ a:hover {
   color: orange;
 }
 a[href*="http"] {
-  padding-right: 0.7rem;
+  padding-right: 12px;
   background-image: url('../image/external-link-52.png');
-  background-size: 0.5rem;
+  background-size: 8px;
   background-repeat: no-repeat;
   background-position: right center;
 }
