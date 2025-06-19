@@ -42,14 +42,16 @@ header, footer {
 
 @font-face {
     font-family:'swansea';
-    src: url('fonts/Swansea-q3pd.ttf') format('ttf');
+    src: url('../fonts/Swansea-q3pd.woff2') format('woff2'),
+	     url('../fonts/Swansea-q3pd.woff') format('woff'), 
+         url('../fonts/Swansea-q3pd.ttf') format('truetype');
 	font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'hirosin';
-    src: url('fonts/Demohirosinregular.ttf') format('ttf');
+    src: url('../fonts/Demohirosinregular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -70,15 +72,15 @@ h2 {
 	font-size: 1.7rem;
 	text-align: left-side;
 }
-p {
+section p {
   text-indent: 20px;
 }
 
 p, li {
   font-size: 1 rem;
   line-height: 1.5;
-  word-spacing: 1px;
-  letter-spacing: 0.2px;
+  word-spacing: 2.5px;
+  letter-spacing: 0.4px;
 }
 a:link,
 a:visited {
@@ -89,9 +91,36 @@ a:hover {
   text-decoration: underline;
   color: orange;
 }
+a[href*="http"] {
+  padding-right: 0.7rem;
+  background-image: url('../image/external-link-52.png');
+  background-size: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+ul, ol {
+  margin: 0.2rem;
+}
 
-nav{
+nav ul {
+  padding-left: 0;
+  margin-top: 0.2rem;
+}
+
+nav li {
+  list-style-type: none;
+  margin-bottom: 1.7rem;
+}
+nav li a{
 	background-color: #white;
-	border:5px solid #a66;
-	padding: 25px;
+	border:2px solid #a66;
+    padding: 3px;
+	text-align: center;
+	font-size: 2rem;
+	text-decoration: none;
+	box-sizing: border-box;
+    width: 100%;
+	line-height: 2;
+	display: inline-block;
+	
 }
