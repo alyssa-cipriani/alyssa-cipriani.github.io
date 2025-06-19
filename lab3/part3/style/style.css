@@ -41,7 +41,7 @@ header, footer {
 }
 
 @font-face {
-    font-family: 'Swansea';
+    font-family:'Swansea';
     src: url('fonts/Swansea-q3pd.ttf') format('ttf');
 	font-weight: normal;
     font-style: normal;
