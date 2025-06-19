@@ -32,6 +32,8 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+	display: flexbox;
+	justify-content: space-between;
   }
   
   nav a {
@@ -50,6 +52,4 @@ body {
       width: 200px;
   }
   
-  html{
-	  [font-size:10px;
-  }
+ 
