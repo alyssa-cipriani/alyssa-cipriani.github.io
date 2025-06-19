@@ -4,5 +4,8 @@ html {
 }
 div {
 	width: 200px;
+	height: 80px;
+	line-height: 3;
+    text-align: center;
 
 }
