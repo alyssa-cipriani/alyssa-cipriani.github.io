@@ -41,14 +41,14 @@ header, footer {
 }
 
 @font-face {
-    font-family:'Swansea';
+    font-family:'swansea';
     src: url('fonts/Swansea-q3pd.ttf') format('ttf');
 	font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Hirosin';
+    font-family: 'hirosin';
     src: url('fonts/Demohirosinregular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
@@ -56,5 +56,17 @@ header, footer {
 
 html{
 	font-size: 16px;
-	font-family:Swansea,serif;
+	font-family:swansea,serif;
+}
+h1, h2 {
+  font-family: hirosin ,serif; 
+}
+
+h1 {
+	font-size: 5rem;
+	text-align: center;
+}
+h2 {
+	font-size: 5rem;
+	text-align: center;
 }
