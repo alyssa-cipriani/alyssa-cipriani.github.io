@@ -71,7 +71,7 @@ h2 {
 	text-align: left-side;
 }
 p {
-  text-indent: 15px;
+  text-indent: 20px;
 }
 
 p, li {
@@ -80,3 +80,12 @@ p, li {
   word-spacing: 1px;
   letter-spacing: 0.2px;
 }
+a:link,
+a:visited {
+  color: #a66;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: orange;
+  
