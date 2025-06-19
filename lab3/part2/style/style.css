@@ -6,9 +6,17 @@ div {
 	width: 200px;
 	margin: auto;
 	line-height: 3;
+	
+	background-color: red;
+	background-image: linear-gradient(
+    to top left,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.2) 30%,
+    rgba(0,0,0,0));
+	
     text-align: center;
 	font-size: 1.0rem;
 	color: white;
-	background-color: red;
+	
 	
 }
