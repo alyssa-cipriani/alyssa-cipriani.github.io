@@ -52,8 +52,9 @@ body {
     margin: 0;
     padding: 0;
 	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
   }
-
   .feature {
       width: 200px;
   }
