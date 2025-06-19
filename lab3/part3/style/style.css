@@ -70,3 +70,12 @@ h2 {
 	font-size: 1.5rem;
 	text-align: left-side;
 }
+p {
+  text-indent: 10px;
+}
+
+p, li {
+  font-size: 0.5rem;
+  line-height: 1.5;
+  word-spacing: 2px;
+}
