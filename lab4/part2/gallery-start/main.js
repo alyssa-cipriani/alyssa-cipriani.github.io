@@ -34,3 +34,9 @@ for (let i=0;i<images.length;i++){
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click',function(){
 	if(btn.textContent == "Darken"){
+		btn.textContent = "Lighten"
+		overlay.style.backgroundColor = 'rgba (0,0,0,0.5)';
+	}
+	else{
+		btn.txtContent = "Darken"
+		overlay.style.backgroundColor = 'rgba(0,0,0,0)';
