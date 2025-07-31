@@ -8,7 +8,7 @@ const overlay = document.querySelector('.overlay');
 const images - ["pic1.jpg", "pic2.jpg", "p1c3.jpg", "pic4.jpg", "pic5.jpg"];
 
 /* Declaring the alternative text for each image file */
-const alts =[
+const alts ={
 
 "pic1.jpg": "close up of human eye ",
 
@@ -18,7 +18,7 @@ const alts =[
 
 "pic4.jpg": "egyptian hieroglyphs",
 
-"pic5.jpg": "brown moth on a leaf"];
+"pic5.jpg": "brown moth on a leaf"};
 
 /* Looping through images */
 
