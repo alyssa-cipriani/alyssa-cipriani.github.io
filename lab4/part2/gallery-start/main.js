@@ -21,10 +21,16 @@ const alts ={
 "pic5.jpg": "brown moth on a leaf"};
 
 /* Looping through images */
-
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
+for (let i=0;i<images.length;i++){
+	const newImage = document.createElement('img');
+	newImage.setAttribute('src',"./images/"+images[i]);
+	newImage.setAttribute('alt', alts[images[i]]);
+	thumbBar.appendChild(newImage);
+	newImage.addEventListener('click',function(f){
+		displayImage.setAttribute('src',this.src);
+		displayImage.setAttribute('alt',this.alt)
+	})
 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click',function(){
+	if(btn.textContent == "Darken"){
