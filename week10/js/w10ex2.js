@@ -1,0 +1,10 @@
+
+console.log("Test 2 ")
+
+function show(){
+    let fname = document.querySelector("#fname").value;
+    document.querySelector("#output").textContent = "Hello" + fname;
+
+}
+
+document.querySelector("#btnGO").addEventListener("click", show);
