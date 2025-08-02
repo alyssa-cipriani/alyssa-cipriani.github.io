@@ -1,41 +1,48 @@
-const displayedImage = document.querySelector('.displayed-img');
-const thumbBar = document.querySelector('.thumb-bar');
 
-const btn = document.querySelector('button');
-const overlay = document.querySelector('.overlay');
+const images = [
+  "pic1.jpg",
+  "pic2.jpg",
+  "pic3.jpg",
+  "pic4.jpg",
+  "pic5.jpg"
+];
 
-/* Declaring the array of image filenames */
-const images = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg"];
-
-/* Declaring the alternative text for each image file */
 const alts = {
-  "pic1.jpg": "Close up of a blue human eye",
-  "pic2.jpg": "Textured rock surface",
-  "pic3.jpg": "Purple and white flowers",
-  "pic4.jpg": "Ancient Egyptian hieroglyphs on a wall",
-  "pic5.jpg": "Brown moth on a green leaf"
+  "pic1.jpg": "close up of human eye",
+  "pic2.jpg": "textured rock",
+  "pic3.jpg": "white and purple flowers",
+  "pic4.jpg": "Egyptian hieroglyphs",
+  "pic5.jpg": "brown moth on a leaf"
 };
 
-/* Looping through images */
-for (let i = 0; i < images.length; i++) {
-  const newImage = document.createElement('img');
-  newImage.setAttribute('src', `images/${images[i]}`); // Using template literal for cleaner path
-  newImage.setAttribute('alt', alts[images[i]]);
-  thumbBar.appendChild(newImage);
+const displayedImage = document.querySelector(".displayed-img");
+const thumbBar       = document.querySelector(".thumb-bar");
+const btn            = document.querySelector("button");
+const overlay        = document.querySelector(".overlay");
 
-  newImage.addEventListener('click', function() {
-    displayedImage.src = this.src;
-    displayedImage.alt = this.alt;
+for (let i = 1; i <= images.length; i++) {
+  const filename = `pic${i}.jpg`;
+  const thumb    = document.createElement("img");
+
+  thumb.src = `images/${filename}`;
+  thumb.alt = alts[filename];
+  thumbBar.appendChild(thumb);
+  thumb.addEventListener("click", () => {
+    displayedImage.src = thumb.src;
+    displayedImage.alt = thumb.alt;
   });
 }
 
-/* Wiring up the Darken/Lighten button */
-btn.addEventListener('click', function() {
-  if (btn.textContent === "Darken") {
-    btn.textContent = "Lighten";
-    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+btn.addEventListener("click", () => {
+  const btnClass = btn.getAttribute("class");  
+
+  if (btnClass === "dark") {
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    btn.textContent               = "Lighten";
+    btn.setAttribute("class", "light");
   } else {
-    btn.textContent = "Darken";
-    overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
+    btn.textContent               = "Darken";
+    btn.setAttribute("class", "dark");
   }
 });
