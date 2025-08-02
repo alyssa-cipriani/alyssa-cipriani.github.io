@@ -38,11 +38,11 @@ btn.addEventListener("click", () => {
 
   if (btnClass === "dark") {
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    btn.textContent               = "Lighten";
+    btn.textContent = "Lighten";
     btn.setAttribute("class", "light");
   } else {
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
-    btn.textContent               = "Darken";
+    btn.textContent = "Darken";
     btn.setAttribute("class", "dark");
   }
 });
