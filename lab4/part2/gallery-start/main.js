@@ -16,25 +16,27 @@ const alts ={
 
 "pic3.jpg": "white and purple flowers",
 
-"pic4.jpg": "egyptian hieroglyphs",
+"pic4.jpg": "Egyptian hieroglyphs",
 
 "pic5.jpg": "brown moth on a leaf"
 }
 
 /* Looping through images */
-for (let i=0;i<images.length;i++){
-	const newImage = document.createElement('img');
-	newImage.setAttribute('src',"./images/"+images[i]);
-	newImage.setAttribute('alt', alts[images[i]]);
-	thumbBar.appendChild(newImage);
-	newImage.addEventListener('click',function(f){
-		displayImage.setAttribute('src',this.src);
-		displayImage.setAttribute('alt',this.alt)
-	})
+for (let i = 0; i < images.length; i++) {
+  const newImage = document.createElement('img');
+  newImage.src = `./images/${images[i]}`;
+  newImage.alt = alts[images[i]];
+  thumbBar.appendChild(newImage);
+
+  newImage.addEventListener('click', function() {
+    displayedImage.src = this.src;
+    displayedImage.alt = this.alt;
+  });
+}  
 
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click',function(){
-	if(btn.textContent == "Darken"){
+	if(btn.textContent === "Darken"){
 		btn.textContent = "Lighten"
 		overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
 	}
