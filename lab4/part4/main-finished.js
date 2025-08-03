@@ -6,7 +6,7 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-const para = document.querySelector('p');
+const score = document.querySelector('p');
 let count = 0;
 
 function random(min, max) {
@@ -36,7 +36,6 @@ class Ball extends Shape {
   }	
 
   draw() {
-	  if (this.exists) { 
 	  ctx.beginPath();
 	  ctx.fillStyle = this.color;
 	  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -126,7 +125,26 @@ checkBounds(){
   }
 });
 }
+
+collisionDetect() {
+        for (const ball of balls) {
+          if (ball.exists) {
+            const dx = this.x - ball.x;
+            const dy = this.y - ball.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+      
+            if (distance < this.size + ball.size) {
+              ball.exists = false;
+              ball_count-=1;
+            }
+          }
+        }
+      }  
+}
+
 const balls = [];
+const evil = new EvilCircle(10,10);
+
 
 while (balls.length < 25) {
   const size = random(10, 20);
