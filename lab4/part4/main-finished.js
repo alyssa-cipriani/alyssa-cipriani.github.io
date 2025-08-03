@@ -30,8 +30,8 @@ class Shape {
 class Ball extends Shape {
   constructor(x, y, velX, velY, size, color) {
     super(x, y, velX, velY);
-    this.size = 10;
-    this.color = pink;
+    this.size = size;
+    this.color = colour;
     this.exists = true;  
 	
 class Ball {
@@ -72,9 +72,10 @@ class Ball {
     this.y += this.velY;
   }
 
+class Ball {
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -87,13 +88,17 @@ class Ball {
   }
 }
 
+class EvilCircle extends Shape {
+	constructor(x, y) {
+		super(x, y, 20, 20);
+		this.color = 'white';
+		this.size  = 10;
+
 const balls = [];
 
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
