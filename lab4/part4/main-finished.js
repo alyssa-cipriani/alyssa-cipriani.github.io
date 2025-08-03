@@ -84,7 +84,7 @@ class EvilCircle extends Shape {
 		super(x, y, 20, 20);
 		this.color = 'white';
 		this.size  = 10;
-		
+}	
 draw(){
     ctx.startPath();
     ctx.lineWidth = 3;
