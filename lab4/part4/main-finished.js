@@ -1,4 +1,4 @@
-// set up canvas
+
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -6,13 +6,12 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-// function to generate random number
+
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// function to generate random RGB color value
 
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
@@ -31,7 +30,7 @@ class Ball extends Shape {
   constructor(x, y, velX, velY, size, color) {
     super(x, y, velX, velY);
     this.size = size;
-    this.color = colour;
+    this.color = color;
     this.exists = true;  
 	
 class Ball {
@@ -94,6 +93,29 @@ class EvilCircle extends Shape {
 		this.color = 'white';
 		this.size  = 10;
 		
+draw(){
+    ctx.startPath();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+}
+
+ setControls() {
+        let _this = this;
+        window.onkeydown = function(e) {
+            if (e.key === 'a') {
+                _this.x -= _this.velX;
+            } else if (e.key === 'd') {
+                _this.x += _this.velX;
+            } else if (e.key === 'w') {
+                _this.y -= _this.velY;
+            } else if (e.key === 's') {
+                _this.y += _this.velY;
+     };
+   };
+};
+	
 window.addEventListener("keydown", (e) => {
   switch (e.key) {
     case "a":
