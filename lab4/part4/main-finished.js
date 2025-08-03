@@ -6,8 +6,8 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-const score = document.querySelector('p');
-let count = 0;
+const countEl   = document.getElementById('count');
+let   ballCount = 25;
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -36,10 +36,12 @@ class Ball extends Shape {
   }	
 
   draw() {
+	  if (this.exists){
 	  ctx.beginPath();
 	  ctx.fillStyle = this.color;
 	  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
 	  ctx.fill();
+	  }
   }
 
   update() {
@@ -107,26 +109,26 @@ checkBounds(){
     }
   }
   
- setControls() {
-	 window.addEventListener("keydown", (e) => {
-		 switch (e.key) {
-			case "a":
-			this.x -= this.velX;
-			break;
-			case "d":
-			this.x += this.velX;
-			break;
-			case "w":
-			this.y -= this.velY;
-			break;
-			case "s":
-			this.y += this.velY;
-			break;
-  }
-});
+setControls(){
+    window.addEventListener("keydown", (e) => {
+        switch (e.key) {
+            case "a":
+                this.x -= this.velX;
+                break;
+            case "d":
+                this.x += this.velX;
+                break;
+            case "w":
+                this.y -= this.velY;
+                break;
+            case "s":
+                this.y += this.velY;
+                break;
+        }
+    });
 }
 
-collisionDetect() {
+collisionDetect(){
         for (const ball of balls) {
           if (ball.exists) {
             const dx = this.x - ball.x;
@@ -165,10 +167,17 @@ function loop() {
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
+   if (ball.exists) {
     ball.draw();
     ball.update();
     ball.collisionDetect();
   }
+ }
+   score.textContent = `Ball Count: ${ball_count}`
+
+   evil.draw();
+   evil.checkBounds();
+   evil.collisionDetect();
 
   requestAnimationFrame(loop);
 }
