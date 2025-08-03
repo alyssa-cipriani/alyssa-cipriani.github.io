@@ -107,6 +107,7 @@ checkBounds(){
       this.y += this.size;
     }
   }
+  
  setControls() {
 	 window.addEventListener("keydown", (e) => {
 		 switch (e.key) {
