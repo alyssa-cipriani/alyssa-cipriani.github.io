@@ -33,22 +33,14 @@ class Ball extends Shape {
     this.size = size;
     this.color = color;
     this.exists = true;  
-	
-class Ball {
-  constructor(x, y, velX, velY, color, size) {
-    this.x = x;
-    this.y = y;
-    this.velX = velX;
-    this.velY = velY;
-    this.color = color;
-    this.size = size;
-  }
+  }	
 
   draw() {
-    ctx.beginPath();
-    ctx.fillStyle = this.color;
-    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-    ctx.fill();
+	  if (this.exists) { 
+	  ctx.beginPath();
+	  ctx.fillStyle = this.color;
+	  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+	  ctx.fill();
   }
 
   update() {
@@ -72,7 +64,6 @@ class Ball {
     this.y += this.velY;
   }
 
-class Ball {
   collisionDetect() {
     for (const ball of balls) {
       if (!(this === ball) && ball.exists) {
@@ -103,34 +94,20 @@ draw(){
 }
 
  setControls() {
-        let _this = this;
-        window.onkeydown = function(e) {
-            if (e.key === 'a') {
-                _this.x -= _this.velX;
-            } else if (e.key === 'd') {
-                _this.x += _this.velX;
-            } else if (e.key === 'w') {
-                _this.y -= _this.velY;
-            } else if (e.key === 's') {
-                _this.y += _this.velY;
-     };
-   };
-};
-	
-window.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "a":
-      this.x -= this.velX;
-      break;
-    case "d":
-      this.x += this.velX;
-      break;
-    case "w":
-      this.y -= this.velY;
-      break;
-    case "s":
-      this.y += this.velY;
-      break;
+	 window.addEventListener("keydown", (e) => {
+		 switch (e.key) {
+			case "a":
+			this.x -= this.velX;
+			break;
+			case "d":
+			this.x += this.velX;
+			break;
+			case "w":
+			this.y -= this.velY;
+			break;
+			case "s":
+			this.y += this.velY;
+			break;
   }
 });
 }
@@ -164,3 +141,6 @@ function loop() {
 }
 
 loop();
+
+
+
