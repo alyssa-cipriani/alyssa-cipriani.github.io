@@ -88,7 +88,7 @@ class EvilCircle extends Shape {
 		this.setControls();
 }	
 draw(){
-    ctx.beginPathPath();
+    ctx.beginPath();
     ctx.lineWidth = 3;
     ctx.strokeStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -138,7 +138,6 @@ collisionDetect(){
       
             if (distance < this.size + ball.size) {
               ball.exists = false;
-              ball_count-=1;
 			  countEl.textContent = --ballCount;
             }
           }
@@ -158,7 +157,6 @@ while (balls.length < 25) {
     random(-7, 7),
     random(-7, 7),
 	size,
-    randomRGB(),
   );
 
   balls.push(ball);
