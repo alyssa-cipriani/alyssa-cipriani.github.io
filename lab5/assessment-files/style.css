@@ -51,7 +51,7 @@ p, li, table {
 
 /* || header layout */
 
-div[class="nav"], article, footer, .secondary {
+nav {
   background-color: white;
 }
 
@@ -63,7 +63,7 @@ article {
   margin-right: 10px;
 }
 
-div[class="nav"] {
+nav {
   height: 50px;
   background-color: ff80ff;
   display: flex;
