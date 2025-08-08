@@ -53,11 +53,8 @@ p, li, table,label {
 
 /* || header layout */
 
-nav {
-  background-color: white;
-}
 
-nav,article, footer, .secondary {
+nav, article, footer, .secondary {
 	background-color: white;
 	padding: 10px 30px;
 }
