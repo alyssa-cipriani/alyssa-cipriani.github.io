@@ -54,7 +54,7 @@ p, li, table,label {
 /* || header layout */
 
 
- article, footer, .secondary {
+ nav, article, footer, .secondary {
 	background-color: white;
 	padding: 10px 30px;
 }
